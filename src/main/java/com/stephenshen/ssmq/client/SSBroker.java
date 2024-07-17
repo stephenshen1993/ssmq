@@ -1,4 +1,4 @@
-package com.stephenshen.ssmq.core;
+package com.stephenshen.ssmq.client;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

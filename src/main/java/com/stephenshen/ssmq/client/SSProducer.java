@@ -1,5 +1,6 @@
-package com.stephenshen.ssmq.core;
+package com.stephenshen.ssmq.client;
 
+import com.stephenshen.ssmq.model.SSMessage;
 import lombok.AllArgsConstructor;
 
 /**

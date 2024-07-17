@@ -1,4 +1,8 @@
-package com.stephenshen.ssmq.core;
+package com.stephenshen.ssmq.client;
+
+import com.stephenshen.ssmq.model.SSMessage;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * message consumer.
@@ -7,12 +11,16 @@ package com.stephenshen.ssmq.core;
  */
 public class SSConsumer<T> {
 
+    private String id;
     SSBroker broker;
     String topic;
     SSMq mq;
 
+    static AtomicInteger idgen = new AtomicInteger(0);
+
     public SSConsumer(SSBroker broker) {
         this.broker = broker;
+        this.id = "CID" + idgen.getAndDecrement();
     }
 
     public void subscribe(String topic) {
@@ -25,7 +33,7 @@ public class SSConsumer<T> {
         return mq.poll(timeout);
     }
 
-    public void listen(SSMessageListener<T> listener) {
+    public void listen(SSListener<T> listener) {
         mq.listen(listener);
     }
 }

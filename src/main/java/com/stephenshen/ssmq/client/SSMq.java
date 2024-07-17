@@ -1,5 +1,6 @@
-package com.stephenshen.ssmq.core;
+package com.stephenshen.ssmq.client;
 
+import com.stephenshen.ssmq.model.SSMessage;
 import lombok.SneakyThrows;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class SSMq {
 
     private String topic;
     private LinkedBlockingQueue<SSMessage> queue = new LinkedBlockingQueue<>();
-    private List<SSMessageListener> listeners = new ArrayList<>();
+    private List<SSListener> listeners = new ArrayList<>();
 
     public SSMq(String topic) {
         this.topic = topic;
@@ -34,7 +35,7 @@ public class SSMq {
         return queue.poll(timeout, TimeUnit.MILLISECONDS);
     }
 
-    public <T> void listen(SSMessageListener<T> listener) {
+    public <T> void listen(SSListener<T> listener) {
         listeners.add(listener);
     }
 }

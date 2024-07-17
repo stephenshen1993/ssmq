@@ -1,9 +1,9 @@
 package com.stephenshen.ssmq.demo;
 
-import com.stephenshen.ssmq.core.SSBroker;
-import com.stephenshen.ssmq.core.SSConsumer;
-import com.stephenshen.ssmq.core.SSMessage;
-import com.stephenshen.ssmq.core.SSProducer;
+import com.stephenshen.ssmq.client.SSBroker;
+import com.stephenshen.ssmq.client.SSConsumer;
+import com.stephenshen.ssmq.model.SSMessage;
+import com.stephenshen.ssmq.client.SSProducer;
 import lombok.SneakyThrows;
 
 /**

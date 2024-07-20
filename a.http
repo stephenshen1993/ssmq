@@ -1,0 +1,16 @@
+### sub
+GET http://localhost:8765/ssmq/sub?t=a&cid=ss
+
+### send
+POST http://localhost:8765/ssmq/send?t=a
+Content-Type: application/json
+
+{
+  "body": "{\"id\":9,\"item\":\"item9\",\"price\":900.0}"
+}
+
+### recv
+GET http://localhost:8765/ssmq/recv?t=a&cid=ss
+
+### ack
+POST http://localhost:8765/ssmq/ack?t=a&cid=ss&offset=1

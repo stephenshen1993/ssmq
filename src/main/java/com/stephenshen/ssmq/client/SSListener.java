@@ -1,6 +1,6 @@
 package com.stephenshen.ssmq.client;
 
-import com.stephenshen.ssmq.model.SSMessage;
+import com.stephenshen.ssmq.model.Message;
 
 /**
  * message listener.
@@ -9,5 +9,5 @@ import com.stephenshen.ssmq.model.SSMessage;
  */
 public interface SSListener<T> {
 
-    void onMessage(SSMessage<T> message);
+    void onMessage(Message<T> message);
 }

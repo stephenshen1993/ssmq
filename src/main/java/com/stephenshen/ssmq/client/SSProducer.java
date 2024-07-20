@@ -1,6 +1,6 @@
 package com.stephenshen.ssmq.client;
 
-import com.stephenshen.ssmq.model.SSMessage;
+import com.stephenshen.ssmq.model.Message;
 import lombok.AllArgsConstructor;
 
 /**
@@ -12,9 +12,7 @@ public class SSProducer {
 
     SSBroker broker;
 
-    public boolean send(String topic, SSMessage message) {
-        SSMq mq = broker.find(topic);
-        if (mq == null) throw new RuntimeException("topic not found");
-        return mq.send(message);
+    public boolean send(String topic, Message message) {
+        return broker.send(topic, message);
     }
 }
